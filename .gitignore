@@ -1,1 +1,5 @@
+# CLion IDE files
 .idea/
+
+# Downloaded dictionary files
+dict*
