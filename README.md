@@ -36,6 +36,7 @@ Which will output:
 
 
 ## Unit Tests
+To run unit tests, run:
 ```bash
 make run-tests
 ```

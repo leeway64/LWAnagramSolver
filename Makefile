@@ -1,5 +1,5 @@
 run:
-	bun
+	bun LWAnagramSolver.js
 
 run-tests:
-	bun
+	bun test-suite.js
