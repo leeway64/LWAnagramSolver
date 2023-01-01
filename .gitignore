@@ -3,3 +3,6 @@
 
 # Downloaded dictionary files
 dict*
+
+# Dependency directories
+node_modules/

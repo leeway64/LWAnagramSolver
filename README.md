@@ -19,7 +19,7 @@ First, download the dictionary file that you want to use from the
 In this case, let's use [dict3.txt](https://courses.cs.washington.edu/courses/cse143/22su/homework/a6/dict3.txt).
 
 ```bash
-get-dictionary.sh dict3.txt
+bash include/get-dictionary.sh dict3.txt
 ```
 
 This will download dict3.txt into the [include](include) directory.
