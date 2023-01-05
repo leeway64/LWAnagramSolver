@@ -1,3 +1,5 @@
+const LWAnagramSolver = require("./LWAnagramSolverFunctions");
+
 function main()
 {
     var project = "LWAnagramSolver";  // Strings are immutable
@@ -29,10 +31,7 @@ function main()
         }
     }
 
-    
-    const outro = "\n\tAnagrams have been written to phrase-dict.yaml";
-    console.log(outro);
-
+    LWAnagramSolver.writeYAML();
 }
 
 
