@@ -8,7 +8,7 @@ LWAnagramSolver solves angrams in the English language.
 
 ## Installation
 ```bash
-git clone https://github.com/leeway64/LWJavaScriptDictionaryProject.git
+git clone https://github.com/leeway64/LWAnagramSolver.git
 cd LWAnagramSolver
 ```
 

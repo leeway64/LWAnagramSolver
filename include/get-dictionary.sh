@@ -6,8 +6,8 @@ fi
 
 # Check if bun has been downloaded. Discard the output of command -v bun into /dev/null
 # Refer to this for more info: https://stackoverflow.com/a/677212
-DIR=`command -v bun`  # Set variable equal to result of command
-if command -v bun > /dev/null
+Bun_DIR=`command -v bun`  # Set variable equal to result of command
+if $Bun_DIR > /dev/null
 then
     # Use bc to evaluate mathematical expressions
     sixty_four=`echo "2^6" | bc -l`
