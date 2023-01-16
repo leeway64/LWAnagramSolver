@@ -22,7 +22,6 @@ function main()
         {
             process.stdout.write(thirdLine[i]);
         }
-        
         console.log();
         
         if (project.length == x - 49)
@@ -31,7 +30,7 @@ function main()
         }
     }
 
-    LWAnagramSolver.writeYAML();
+    LWAnagramSolver.solveAnagrams();
 }
 
 

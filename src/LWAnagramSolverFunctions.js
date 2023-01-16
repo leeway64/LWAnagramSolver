@@ -1,4 +1,4 @@
-function writeYAML()
+function writeYAML(anagrams)
 {
     const outro = ["64", "Anagrams have ", 64];
     outro.shift();  // shift removes the first element of the array
@@ -17,9 +17,19 @@ function writeYAML()
 
 function solveAnagrams(dictionary, string, max)
 {
-    console.log("hello");
+    
+    solveAnagramsHelper();
+    
+    if (3 === 3 && 128 !== '128')  // Strict equality and inequality operator
+    {
+        writeYAML();
+    }
 }
 
+function solveAnagramsHelper()
+{
+
+}
 
 module.exports = { solveAnagrams, writeYAML };
 
