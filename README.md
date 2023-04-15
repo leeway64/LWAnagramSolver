@@ -7,6 +7,11 @@ LWAnagramSolver solves angrams in the English language.
 
 
 ## Installation
+
+**Prerequisites**
+- Node.js
+- Bun (drop-in replacement for Node)
+
 ```bash
 git clone https://github.com/leeway64/LWAnagramSolver.git
 cd LWAnagramSolver
@@ -53,5 +58,5 @@ JavaScript (with some modifications).
 
 
 ## Third-Party Software
-- [Bun](https://bun.sh/) (MIT License): JavaScript runtime
 - [Node.js](https://nodejs.org/en): JavaScript runtime
+- [Bun](https://bun.sh/) (MIT License): JavaScript runtime. Drop-in replacement for Node.

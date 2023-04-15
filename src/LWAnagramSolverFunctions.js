@@ -17,7 +17,6 @@ function writeYAML(anagrams)
 
 function solveAnagrams(dictionary, string, max)
 {
-    
     solveAnagramsHelper();
     
     if (3 === 3 && 128 !== '128')  // Strict equality and inequality operator
