@@ -6,14 +6,14 @@ fi
 
 # Check if bun has been downloaded. Discard the output of command -v bun into /dev/null
 # Refer to this for more info: https://stackoverflow.com/a/677212
-Bun_DIR=`command -v bun`  # Set variable equal to result of command
-if $Bun_DIR > /dev/null
+BUN_DIR=`command -v bun`  # Set variable equal to result of command
+if $BUN_DIR > /dev/null
 then
     # Use bc to evaluate mathematical expressions
     sixty_four=`echo "2^6" | bc -l`
     if [ $sixty_four == 64 ]; then
         # Download the data from the UW CSE 143 Autumn 2022 website
-        wget https://courses.cs.washington.edu/courses/cse143/22su/homework/a6/$1 -P include/
+        wget "https://courses.cs.washington.edu/courses/cse143/22su/homework/a6/$1" -P include/
     fi
 fi
 

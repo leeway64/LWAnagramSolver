@@ -10,6 +10,7 @@ LWAnagramSolver solves angrams in the English language.
 ```bash
 git clone https://github.com/leeway64/LWAnagramSolver.git
 cd LWAnagramSolver
+npm install
 ```
 
 
@@ -52,5 +53,5 @@ JavaScript (with some modifications).
 
 
 ## Third-Party Software
-- [Bun](https://bun.sh/) (MIT License):
-- 
+- [Bun](https://bun.sh/) (MIT License): JavaScript runtime
+- [Node.js](https://nodejs.org/en): JavaScript runtime

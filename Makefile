@@ -1,5 +1,5 @@
 run:
-	bun src/LWAnagramSolverMain.js
+	node src/LWAnagramSolverMain.js
 
 run-tests:
-	bun test-suite.js
+	node test-suite.js
