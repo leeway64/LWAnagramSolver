@@ -30,9 +30,10 @@ bash include/get-dictionary.sh dict3.txt
 
 This will download dict3.txt into the [include](include) directory.
 
-Next, run LWAnagramSolver:
+Next:
 ```bash
 make run
+cat include/anagrams.yaml | yq
 ```
 
 Which will output:
@@ -58,5 +59,8 @@ JavaScript (with some modifications).
 
 
 ## Third-Party Software
-- [Node.js](https://nodejs.org/en): JavaScript runtime
+- [Node.js](https://nodejs.org/en): JavaScript runtime.
 - [Bun](https://bun.sh/) (MIT License): JavaScript runtime. Drop-in replacement for Node.
+- [yaml](https://www.npmjs.com/package/yaml) (ISC License): Node.js YAML library.
+- [Mocha]() (): JavaScript test framework
+- [prompt-sync](https://www.npmjs.com/package/prompt-sync) (MIT License): User input prompter.

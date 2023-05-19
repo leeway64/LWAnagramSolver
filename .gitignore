@@ -6,3 +6,6 @@ dict*
 
 # Dependency directories
 node_modules/
+
+# YAML file containing anagrams
+anagrams.yaml

@@ -1,4 +1,3 @@
-const {readFile, readFileSync} = require('fs');
 const prompt = require('prompt-sync')();
 
 const LWAnagramSolver = require("./LWAnagramSolverFunctions");

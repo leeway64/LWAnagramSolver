@@ -1,5 +1,6 @@
+# Suppress echo of command being run with "@"
 run:
-	node src/LWAnagramSolverMain.js
+	@node src/LWAnagramSolverMain.js
 
 run-tests:
-	node test-suite.js
+	@npm test
