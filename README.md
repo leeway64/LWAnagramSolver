@@ -57,6 +57,11 @@ I originally completed the homework in Java, but for this project, I implemented
 [specifications](https://courses.cs.washington.edu/courses/cse143/22su/homework/a6/a6.pdf) in
 JavaScript (with some modifications).
 
+In addition, this project also includes solutions to several questions from
+[Cracking the Coding Interview (6th Edition), by Gayle Laakmann McDowell](https://www.barnesandnoble.com/w/cracking-the-coding-interview-gayle-laakmann-mcdowell/1122334602);
+I wanted to learn/practice JavaScript by completing interview problems. You can find the solutions
+in the [test](test) directory.
+
 
 ## Third-Party Software
 - [Node.js](https://nodejs.org/en): JavaScript runtime.

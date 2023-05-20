@@ -6,17 +6,20 @@ describe('ArraysStringsHashMaps', function()
 {
     describe('isUnique', function()
     {
-        it('Simple test', function()
+        it('isUnique', function()
         {
-            assert.equal(ArraysStringsHashMaps.IsUnique(), true);
+            assert.equal(ArraysStringsHashMaps.isUniqueV1(""), true);
+            assert.equal(ArraysStringsHashMaps.isUniqueV1("Y"), true);
+            assert.equal(ArraysStringsHashMaps.isUniqueV1("ab"), true);
+            assert.equal(ArraysStringsHashMaps.isUniqueV1("abba"), false);
         });
     });
     
-    describe('isUnique', function()
+    describe('isPermutation', function()
     {
-        it('Simple test', function()
+        it('isPermutation', function()
         {
-            assert.equal(ArraysStringsHashMaps.IsUnique(), true);
+            assert.equal(ArraysStringsHashMaps.isPermutationV1(""), true);
         });
     });
 });
