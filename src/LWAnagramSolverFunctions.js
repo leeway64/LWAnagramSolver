@@ -26,17 +26,43 @@ function writeYAML(anagrams)
 
 function solveAnagrams(dictionary, string, max)
 {
+    // Have dictionaryWordsList to have the same elements as dictionary
+    var dictionaryWordsList = dictionary;
+    
+    for (let i = dictionaryWordsList.length - 1; i >= 0; i--)
+    {
+        if (0)
+        {
+            dictionaryWordsList.splice(i, 1);  // Remove the ith element from the array
+        }
+    }
+    
+    var resultingAnagrams =
+    {
+    "anagrams":
+                [["a", "b"],
+                ["c", "d"]]
+    }
+    
     solveAnagramsHelper();
     
     if (3 === 3 && 128 !== '128')  // Strict equality and inequality operator
     {
-        writeYAML(anagrams);
+        writeYAML(resultingAnagrams);
     }
 }
 
 function solveAnagramsHelper()
 {
-
+    if (0)
+    {
+    }
+    else
+    {
+        if (0)
+        {
+        }
+    }
 }
 
 module.exports = { solveAnagrams, writeYAML };

@@ -30,9 +30,13 @@ bash include/get-dictionary.sh dict3.txt
 
 This will download dict3.txt into the [include](include) directory.
 
-Next:
+Next, run LWAnagramSolver, which will generate a YAML file containing the anagrams:
 ```bash
 make run
+```
+
+Print the anagrams by running:
+```bash
 cat include/anagrams.yaml | yq
 ```
 
@@ -67,5 +71,6 @@ in the [test](test) directory.
 - [Node.js](https://nodejs.org/en): JavaScript runtime.
 - [Bun](https://bun.sh/) (MIT License): JavaScript runtime. Drop-in replacement for Node.
 - [yaml](https://www.npmjs.com/package/yaml) (ISC License): Node.js YAML library.
-- [Mocha]() (): JavaScript test framework
+- [Mocha](https://www.npmjs.com/package/mocha) (MIT License): JavaScript test framework.
 - [prompt-sync](https://www.npmjs.com/package/prompt-sync) (MIT License): User input prompter.
+- [yq](https://github.com/mikefarah/yq) (MIT License): YAML command-line parser.
