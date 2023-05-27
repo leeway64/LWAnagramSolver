@@ -1,5 +1,6 @@
 var assert = require('assert');
 const ArraysStringsHashMaps = require("./ArraysStringsHashMaps");
+const BitManipulation = require("./BitManipulation.js");
 
 
 describe('ArraysStringsHashMaps', function()
@@ -63,6 +64,21 @@ describe('ArraysStringsHashMaps', function()
             assert.equal(ArraysStringsHashMaps.isRotation("waterbottle", "erbottlewat"), true);
             assert.equal(ArraysStringsHashMaps.isRotation("Thrones", "NESTHRO"), true);
             assert.equal(ArraysStringsHashMaps.isRotation("Hong Kong", "fhdskfhsjkf"), false);
+        });
+    });
+});
+
+describe('BitManipulation', function()
+{
+    describe('isPowerOf2', function()
+    {
+        it('isPowerOf2', function()
+        {
+            assert.equal(BitManipulation.isPowerOf2(1), true); 
+            assert.equal(BitManipulation.isPowerOf2(2), true); 
+            assert.equal(BitManipulation.isPowerOf2(4), true); 
+            assert.equal(BitManipulation.isPowerOf2(64), true); 
+            assert.equal(BitManipulation.isPowerOf2(200), false); 
         });
     });
 });
