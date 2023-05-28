@@ -66,6 +66,51 @@ describe('ArraysStringsHashMaps', function()
             assert.equal(ArraysStringsHashMaps.isRotation("Hong Kong", "fhdskfhsjkf"), false);
         });
     });
+    
+    describe('getCharacterCounts', function()
+    {
+        it('getCharacterCounts', function()
+        {
+            assert.equal(ArraysStringsHashMaps.getCharacterCounts("a"), "a1");
+            assert.equal(ArraysStringsHashMaps.getCharacterCounts("abc"), "a1b1c1");
+            assert.equal(ArraysStringsHashMaps.getCharacterCounts("aabcccccaaa"), "a5b1c5");
+        });
+    });
+    
+    describe('zeroRowAndColumn', function()
+    {
+        var matrix1 = [[0]];
+        
+        var matrix2 = [
+        [-1, 1],
+        [2, 3]
+        ];
+        
+        var matrix2 = [
+        [1, 0],
+        [1, 1]
+        ];
+        
+        var matrix3 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+        ];
+        
+        var matrix4 = [
+        [100, 4, 5, 8],
+        [434434343434, 0, 64534, 0],
+        [858575756607, 32228, 98, 40]
+        ];
+
+        it('zeroRowAndColumn', function()
+        {
+            //assert.equal(ArraysStringsHashMaps.zeroRowAndColumn(matrix1), matrix1);
+            //assert.equal(ArraysStringsHashMaps.zeroRowAndColumn(matrix2), [[0, 0], [1, 0]]);
+            //assert.equal(ArraysStringsHashMaps.zeroRowAndColumn(matrix3), matrix3);
+            //assert.equal(ArraysStringsHashMaps.zeroRowAndColumn(matrix4), [[100, 0, 5, 0], [0, 0, 0, 0], [858575756607, 32228, 98, 0]]);
+        });
+    });
 });
 
 describe('BitManipulation', function()

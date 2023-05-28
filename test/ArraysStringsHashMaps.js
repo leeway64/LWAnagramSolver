@@ -91,8 +91,33 @@ function isRotation(str1, str2)
 }
 
 // 
-function zeroRowColumn()
+function zeroRowAndColumn()
 {
 }
 
-module.exports = { isUniqueV1, isPermutationV1, URLify, isSubstring, isRotation, zeroRowColumn };
+// Get counts of characters in a string. e.g., "aabcccccaaa" becomes a5b1c5
+function getCharacterCounts(str)
+{
+    var lowercaseStr = str.toLowerCase();
+    var letterCounts = new Map();
+    for (let i = 0; i < lowercaseStr.length; i++)
+    {
+        if (!letterCounts.has(lowercaseStr[i]))
+        {
+            letterCounts.set(lowercaseStr[i], 0);            
+        }
+        letterCounts.set(lowercaseStr[i], letterCounts.get(lowercaseStr[i]) + 1);
+    }
+    
+    var characterCountsString = "";
+    
+    for (let [key, value] of letterCounts)
+    {
+        var letter_and_counts = key.concat(value);
+        characterCountsString = characterCountsString.concat(letter_and_counts);
+    }
+
+    return characterCountsString;
+}
+
+module.exports = { isUniqueV1, isPermutationV1, URLify, isSubstring, isRotation, zeroRowAndColumn, getCharacterCounts };
