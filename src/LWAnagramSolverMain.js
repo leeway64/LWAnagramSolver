@@ -1,7 +1,9 @@
-const {readFile, readFileSync} = require('fs');
+'use strict';
+
+const { readFile, readFileSync } = require('fs');
 const prompt = require('prompt-sync')();
 
-const LWAnagramSolver = require("./LWAnagramSolverFunctions");
+var { LWAnagramSolver } = require("./LWAnagramSolver");
 
 
 function main()
@@ -34,6 +36,9 @@ function main()
     {
         var dict_file = readFileSync("./include/" + dict_name, "utf8");
     }
+    // console.log(dict_file);
+    // Create LWAnagramSolver object
+    var AnagramSolver = new LWAnagramSolver(dict_file);
     
     var x = 65;
     x++;
@@ -54,21 +59,16 @@ function main()
         {
             process.exit();
         }
-        console.log()
+        console.log();
         
         if (project.length == x - 49)
         {
             console.log("\tMax words to include (0 for no max): ");
         }
         var max = prompt('\t\t');
-        
-        if (max < 0)
-        {
-            throw "Maximum number of words to include must be greater than or equal to 0";
-        }
     }
     
-    LWAnagramSolver.solveAnagrams(dict_file, phrase, max);
+    AnagramSolver.solveAnagrams(phrase, max);
 }
 
 
