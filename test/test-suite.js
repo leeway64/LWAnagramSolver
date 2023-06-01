@@ -1,7 +1,41 @@
 var assert = require('assert');
+
+var { LWLetterInventory } = require("../src/LWLetterInventory");
 const ArraysStringsHashMaps = require("./ArraysStringsHashMaps");
 const BitManipulation = require("./BitManipulation.js");
 
+
+describe('LWLetterInventory', function()
+{
+    describe('size and isEmpty', function()
+    {
+        it('size', function()
+        {
+            assert.equal(true, true);
+        });
+
+        it('isEmpty', function()
+        {
+            assert.equal(true, true);
+        });    
+    });
+    
+    describe('get', function()
+    {
+        it('get', function()
+        {
+            assert.equal(true, true);
+        });
+    });
+    
+    describe('toString', function()
+    {
+        it('toString', function()
+        {
+            assert.equal(true, true);
+        });
+    });
+});
 
 describe('ArraysStringsHashMaps', function()
 {
