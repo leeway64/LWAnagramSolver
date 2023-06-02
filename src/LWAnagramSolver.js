@@ -47,7 +47,7 @@ class LWAnagramSolver
     {
         if (max < 0)
         {
-            throw "Maximum number of words to include must be greater than or equal to 0";
+            throw "IllegalArgumentException: Maximum number of words to include must be greater than or equal to 0";
         }
         
         for (let i = this.#relevantDictionary.length - 1; i >= 0; i--)

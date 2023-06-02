@@ -7,22 +7,42 @@ const BitManipulation = require("./BitManipulation.js");
 
 describe('LWLetterInventory', function()
 {
+    var letterInventory1 = new LWLetterInventory("");
+    var letterInventory2 = new LWLetterInventory("blackfyre");
+    var letterInventory3 = new LWLetterInventory("A Song of Ice and Fire");
+    var letterInventory4 = new LWLetterInventory("Dunk & Egg");
+    var letterInventory5 = new LWLetterInventory("Barr#$%^&*ack H. Obama$%^&");
+                            
     describe('size and isEmpty', function()
     {
         it('size', function()
         {
-            assert.equal(true, true);
+            assert.equal(letterInventory1.size(), 0);
+            assert.equal(letterInventory2.size(), 9);
+            assert.equal(letterInventory3.size(), 17);
+            assert.equal(letterInventory4.size(), 7);
+            assert.equal(letterInventory5.size(), 13);
         });
 
         it('isEmpty', function()
         {
-            assert.equal(true, true);
-        });    
+            assert.equal(letterInventory1.isEmpty(), true);
+            assert.equal(letterInventory5.isEmpty(), false);
+        });
     });
     
-    describe('get', function()
+    describe('get and set', function()
     {
         it('get', function()
+        {
+            assert.equal(letterInventory1.get("y"), 0);
+            assert.equal(letterInventory2.get("f"), 1);
+            assert.equal(letterInventory3.get("e"), 2);
+            assert.equal(letterInventory4.get("g"), 2);
+            assert.equal(letterInventory5.get("a"), 4);
+        });
+
+        it('set', function()
         {
             assert.equal(true, true);
         });
@@ -31,6 +51,19 @@ describe('LWLetterInventory', function()
     describe('toString', function()
     {
         it('toString', function()
+        {
+            assert.equal(true, true);
+        });
+    });
+    
+    describe('add and subtract', function()
+    {
+        it('add', function()
+        {
+            assert.equal(true, true);
+        });
+
+        it('subtract', function()
         {
             assert.equal(true, true);
         });
