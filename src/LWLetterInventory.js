@@ -25,20 +25,37 @@ class LWLetterInventory
     
     get(letter)
     {
-        return this.#letterCounts.get(letter) == null ? 0 : this.#letterCounts.get(letter);
+        var lowercaseLetter = letter.toLowerCase();
+        if (lowercaseLetter.match(/[a-z]/gi) == null)
+        {
+            throw new Error("IllegalArgumentException: Non-alphabetic character was passed");
+        }
+        
+        return this.#letterCounts.get(lowercaseLetter) == null ? 0 : this.#letterCounts.get(lowercaseLetter);
     }
     
     set(letter, value)
     {
-        if (value < 0 || letter.match(/[a-z]/gi) == null)
+        var lowercaseLetter = letter.toLowerCase();
+        if (lowercaseLetter.match(/[a-z]/gi) == null)
         {
-            throw "IllegalArgumentException: Value is less than 0"
+            throw new Error("IllegalArgumentException: Non-alphabetic character was passed");
+        }
+
+        if (value < 0)
+        {
+            throw new Error("IllegalArgumentException: Value is less than 0");
         }
         
-        this.#size = this.#size - this.get(letter);
-        this.#size += value;
-        
-        this.#letterCounts.set(letter, value);
+        if (this.#letterCounts.has(lowercaseLetter))
+        {
+            this.#size = this.#size + value - this.get(lowercaseLetter);
+        }
+        else
+        {
+            this.#size += value;
+        }
+        this.#letterCounts.set(lowercaseLetter, value);
     }
     
     size()
@@ -53,6 +70,7 @@ class LWLetterInventory
     
     toString()
     {
+        return this.#letterCounts.entries();
     }
     
     add(otherInventory)

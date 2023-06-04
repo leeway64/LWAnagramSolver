@@ -36,7 +36,7 @@ function main()
     {
         var dict_file = readFileSync("./include/" + dict_name, "utf8");
     }
-    // console.log(dict_file);
+
     // Create LWAnagramSolver object
     var AnagramSolver = new LWAnagramSolver(dict_file);
     

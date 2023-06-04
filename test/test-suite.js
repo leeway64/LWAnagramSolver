@@ -11,7 +11,7 @@ describe('LWLetterInventory', function()
     var letterInventory2 = new LWLetterInventory("blackfyre");
     var letterInventory3 = new LWLetterInventory("A Song of Ice and Fire");
     var letterInventory4 = new LWLetterInventory("Dunk & Egg");
-    var letterInventory5 = new LWLetterInventory("Barr#$%^&*ack H. Obama$%^&");
+    var letterInventory5 = new LWLetterInventory("Bar#$%^&*ack H. Obama$%^&");
                             
     describe('size and isEmpty', function()
     {
@@ -21,7 +21,7 @@ describe('LWLetterInventory', function()
             assert.equal(letterInventory2.size(), 9);
             assert.equal(letterInventory3.size(), 17);
             assert.equal(letterInventory4.size(), 7);
-            assert.equal(letterInventory5.size(), 13);
+            assert.equal(letterInventory5.size(), 12);
         });
 
         it('isEmpty', function()
@@ -40,19 +40,44 @@ describe('LWLetterInventory', function()
             assert.equal(letterInventory3.get("e"), 2);
             assert.equal(letterInventory4.get("g"), 2);
             assert.equal(letterInventory5.get("a"), 4);
+            
+            // Testing invalid input
+            // Non-alphabetical character 
+            assert.throws(function() { letterInventory3.set("*"); }, Error);
+            assert.throws(function() { letterInventory4.set("+"); }, Error);
         });
 
         it('set', function()
         {
-            assert.equal(true, true);
-        });
-    });
-    
-    describe('toString', function()
-    {
-        it('toString', function()
-        {
-            assert.equal(true, true);
+            let letterInventory6 = new LWLetterInventory("Dalai Lama");
+            let letterInventory7 = new LWLetterInventory("Jon Snow");
+            let letterInventory8 = new LWLetterInventory("      Brynden       Rivers       ");
+            
+            letterInventory6.set("a", 88);
+            letterInventory7.set("o", 4);
+            letterInventory8.set("x", 100);
+            
+            assert.equal(letterInventory6.get("a"), 88);
+            assert.equal(letterInventory6.size(), 93);
+            
+            assert.equal(letterInventory7.get("o"), 4);
+            assert.equal(letterInventory7.size(), 9);
+            
+            assert.equal(letterInventory8.get("x"), 100);
+            assert.equal(letterInventory8.size(), 113);
+            
+            // Testing set after set has already been called
+            letterInventory8.set("B", 2);
+            assert.equal(letterInventory8.get("B"), 2);
+            assert.equal(letterInventory8.size(), 114);
+            
+            // Testing invalid input
+            // Non-alphabetical character
+            // Need to pass in a function because assert.throws expects a function as its first parameter
+            assert.throws(function() { letterInventory6.set("@", 8); }, Error);
+            
+            // Negative value
+            assert.throws(function() { letterInventory8.set("e", -77); }, Error);
         });
     });
     

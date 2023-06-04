@@ -10,7 +10,7 @@ class LWAnagramSolver
 {
     // The "#" indicates that the field or function is private
     #relevantDictionary = new Array();
-    #letterInventoryMap = new LWLetterInventory();
+    #letterInventoryMap = new LWLetterInventory("");
     
     constructor(availableWordsArray)
     {
