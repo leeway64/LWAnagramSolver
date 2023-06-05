@@ -6,7 +6,7 @@ is_awesome ?= "is awesome"  # "?=" sets variables if they have not been set yet
 # "run" does not exist, or if the file "support-human-rights.ini" is newer than the file "run"
 run: support-human-rights.ini
 # Make sure to not include tabs before ifeq
-ifeq (rights, rights)  # Conditionals
+ifeq ("human rights", "human rights")  # Conditionals
 	@node src/LWAnagramSolverMain.js  # Suppress echo of command being run with "@"
 endif
 

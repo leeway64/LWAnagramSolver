@@ -18,7 +18,6 @@ class LWAnagramSolver
         {
             this.#relevantDictionary.push(word);
         }
-        console.log(this.#relevantDictionary);
     }
 
     #writeYAML(anagrams)

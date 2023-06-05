@@ -85,12 +85,36 @@ describe('LWLetterInventory', function()
     {
         it('add', function()
         {
-            assert.equal(true, true);
+            var letterInventory9 = letterInventory1.add(letterInventory2);
+            var letterInventory10 = letterInventory4.add(letterInventory2);
+            
+            assert.equal(letterInventory9.size(), 9);
+            assert.equal(letterInventory9.isEmpty(), false);
+            assert.equal(letterInventory9.get("f"), 1);
+            
+            assert.equal(letterInventory10.size(), 16);
+            assert.equal(letterInventory10.isEmpty(), false);
+            assert.equal(letterInventory10.get("k"), 2);
         });
 
         it('subtract', function()
         {
-            assert.equal(true, true);
+            var letterInventory11 = letterInventory2.subtract(letterInventory1);
+            var letterInventory12 = letterInventory4.subtract(letterInventory5);
+            
+            var letterInventory13 = new LWLetterInventory("Two plus Eleven");
+            var letterInventory14 = new LWLetterInventory("PluS");
+            var letterInventory15 = letterInventory13.subtract(letterInventory14);
+            
+            assert.equal(letterInventory11.size(), 9);
+            assert.equal(letterInventory11.isEmpty(), false);
+            assert.equal(letterInventory11.get("c"), 1);
+            
+            assert.equal(letterInventory12, null);
+            
+            assert.equal(letterInventory15.size(), 9);
+            assert.equal(letterInventory15.isEmpty(), false);
+            assert.equal(letterInventory15.get("e"), 3);
         });
     });
 });

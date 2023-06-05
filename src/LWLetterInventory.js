@@ -75,10 +75,54 @@ class LWLetterInventory
     
     add(otherInventory)
     {
+        var newLetterInventory = new LWLetterInventory("");
+        newLetterInventory.#letterCounts = new HashMap(this.#letterCounts);
+        
+        var newSize = this.#size + otherInventory.size();
+        newLetterInventory.#size = newSize;
+        
+        for (const pair of otherInventory.#letterCounts)
+        {
+            if (!newLetterInventory.#letterCounts.has(pair.key))
+            {
+                newLetterInventory.#letterCounts.set(pair.key, 0);
+            }
+            newLetterInventory.#letterCounts.set(pair.key, newLetterInventory.#letterCounts.get(pair.key) + pair.value);
+        }
+        
+        return newLetterInventory;
     }
     
     subtract(otherInventory)
     {
+        var newLetterInventory = new LWLetterInventory("");
+        newLetterInventory.#letterCounts = new HashMap(this.#letterCounts);
+        
+        var newSize = this.#size - otherInventory.size();
+        if (newSize < 0)
+        {
+            return null
+        }
+        else
+        {
+            newLetterInventory.#size = newSize;
+        }
+        
+        
+        for (const pair of otherInventory.#letterCounts)
+        {
+            let newCount = newLetterInventory.get(pair.key) - pair.value;
+            if (newCount < 0)
+            {
+                return null;
+            }
+            else
+            {
+                newLetterInventory.#letterCounts.set(pair.key, newCount);
+            }
+        }
+        
+        return newLetterInventory;
     }
 }
 
