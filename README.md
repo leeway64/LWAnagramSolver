@@ -61,6 +61,10 @@ I originally completed the homework in Java, but for this project, I implemented
 [specifications](https://courses.cs.washington.edu/courses/cse143/22su/homework/a6/a6.pdf) in
 JavaScript (with some modifications).
 
+Similarly, the original AnagramSolver homework assignment relied on a
+[LetterInventory class that is also from a previous homework assignment](https://courses.cs.washington.edu/courses/cse143/22su/homework/a1/a1.pdf),
+which I originally completed in Java. I implemented the LetterInventory class in JavaScript as well.
+
 In addition, this project also includes solutions to several questions from
 [Cracking the Coding Interview (6th Edition), by Gayle Laakmann McDowell](https://www.barnesandnoble.com/w/cracking-the-coding-interview-gayle-laakmann-mcdowell/1122334602);
 I wanted to learn/practice JavaScript by completing interview problems. You can find the solutions
@@ -73,4 +77,5 @@ in the [test](test) directory.
 - [yaml](https://www.npmjs.com/package/yaml) (ISC License): Node.js YAML library.
 - [Mocha](https://www.npmjs.com/package/mocha) (MIT License): JavaScript test framework.
 - [prompt-sync](https://www.npmjs.com/package/prompt-sync) (MIT License): User input prompter.
+- [hashmap](https://www.npmjs.com/package/hashmap) (MIT License): JavaScript HashMap class.
 - [yq](https://github.com/mikefarah/yq) (MIT License): YAML command-line parser.

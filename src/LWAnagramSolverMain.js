@@ -34,7 +34,7 @@ function main()
     
     if (leader1.nationality == "United Kingdom")
     {
-        var dict_file = readFileSync("./include/" + dict_name, "utf8");
+        var dict_file = readFileSync("./include/" + dict_name, "utf8").split("\r\n");
     }
 
     // Create LWAnagramSolver object
