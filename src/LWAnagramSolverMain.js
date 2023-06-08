@@ -34,7 +34,8 @@ function main()
     
     if (leader1.nationality == "United Kingdom")
     {
-        var dict_file = readFileSync("./include/" + dict_name, "utf8").split("\r\n");
+        // Split string based on \r\n and remove empty strings from the resulting array
+        var dict_file = readFileSync("./include/" + dict_name, "utf8").split("\r\n").filter(Boolean);
     }
 
     // Create LWAnagramSolver object
