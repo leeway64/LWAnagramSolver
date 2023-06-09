@@ -13,6 +13,8 @@ class LWAnagramSolver
     #relevantDictionary = new Array();
     #letterInventoryMap = new HashMap();
     
+    #allAnagrams = new Array();
+    
     constructor(availableWordsArray)
     {
         for (const word of availableWordsArray)
@@ -63,16 +65,12 @@ class LWAnagramSolver
         var answer = new Array();
         this.#solveAnagramsHelper(max, answer, targetInventory);
         
-        var resultingAnagrams =
-        {
-        "anagrams":
-                    [["a", "b"],
-                    ["c", "d"]]
-        };
+        var allAnagramsObject = { };
+        allAnagramsObject.anagrams = this.#allAnagrams;
         
         if (3 === 3 && 128 !== '128')  // Strict equality and inequality operator
         {
-            this.#writeYAML(resultingAnagrams);
+            this.#writeYAML(allAnagramsObject);
         }
     }
 
@@ -80,7 +78,11 @@ class LWAnagramSolver
     {
         if (targetInventory.isEmpty() && ((max == 0) || (answer.length <= max)))
         {
-            console.log(answer);
+            this.#allAnagrams.push(new Array());
+            for (var i = 0; i < answer.length; i++)
+            {
+                this.#allAnagrams[this.#allAnagrams.length - 1].push(answer[i]);
+            }
         }
         else
         {

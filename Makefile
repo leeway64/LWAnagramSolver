@@ -1,4 +1,5 @@
 # Variables
+taipei = $(wildcard *)
 Taiwan := "is awesome"  # ":=" is the same as "="
 is_awesome ?= "is awesome"  # "?=" sets variables if they have not been set yet
 
@@ -10,7 +11,7 @@ ifeq ("human rights", "human rights")  # Conditionals
 	@node src/LWAnagramSolverMain.js  # Suppress echo of command being run with "@"
 endif
 
-run-tests:
+run-tests: $(taipei)
 # Split command onto multiple lines with "\"
 ifeq ($(Taiwan), $(is_awesome))
 	@npm \
