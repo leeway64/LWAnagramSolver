@@ -32,17 +32,40 @@ This will download dict3.txt into the [include](include) directory.
 
 Next, run LWAnagramSolver, which will generate a YAML file containing the anagrams:
 ```bash
-make run
+$ make run
+
+
+LWAnagramSolver
+	Name of the dictionary file:
+                dict3.txt
+
+	Phrase to scramble (return to quit): 
+                Joe Biden
+
+	Max words to include (0 for no max): 
+                0
+
+	Anagrams have been written to include/anagrams.yaml
 ```
+
 
 Print the anagrams by running:
 ```bash
 cat include/anagrams.yaml | yq
 ```
 
+
 Which will output:
 ```text
-
+anagrams:
+  - - done
+    - jibe
+  - - jibe
+    - done
+  - - jibe
+    - node
+  - - node
+    - jibe
 ```
 
 

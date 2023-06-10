@@ -1,8 +1,8 @@
 var assert = require('assert');
 
 var { LWLetterInventory } = require("../src/LWLetterInventory");
-const ArraysStringsHashMaps = require("./ArraysStringsHashMaps");
-const BitManipulation = require("./BitManipulation.js");
+const ArraysStringsHashMaps = require("../lib/ArraysStringsHashMaps");
+const BitManipulation = require("../lib/BitManipulation.js");
 
 
 describe('LWLetterInventory', function()

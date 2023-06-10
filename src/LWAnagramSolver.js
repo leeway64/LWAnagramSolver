@@ -89,10 +89,11 @@ class LWAnagramSolver
             for (const word of this.#relevantDictionary)
             {
                 var wordLetterInventory = this.#letterInventoryMap.get(word);
-                if (targetInventory.subtract(wordLetterInventory) != null)
+                var subtractedInventory = targetInventory.subtract(wordLetterInventory);
+                if (subtractedInventory != null)
                 {
                     answer.push(word);
-                    this.#solveAnagramsHelper(max, answer, targetInventory.subtract(wordLetterInventory));
+                    this.#solveAnagramsHelper(max, answer, subtractedInventory);
                     targetInventory.add(wordLetterInventory);
                     answer.pop();
                 }
