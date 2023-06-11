@@ -3,6 +3,7 @@ var assert = require('assert');
 var { LWLetterInventory } = require("../src/LWLetterInventory");
 const ArraysStringsHashMaps = require("../lib/ArraysStringsHashMaps");
 const BitManipulation = require("../lib/BitManipulation.js");
+var { LinkedList } = require("../lib/LinkedList");
 
 
 describe('LWLetterInventory', function()
@@ -240,6 +241,45 @@ describe('BitManipulation', function()
             assert.equal(BitManipulation.isPowerOf2(4), true); 
             assert.equal(BitManipulation.isPowerOf2(64), true); 
             assert.equal(BitManipulation.isPowerOf2(200), false); 
+        });
+    });
+});
+
+describe('LinkedList', function()
+{
+    describe('add, remove, size, head, tail', function()
+    {
+        it('add, size, head, tail', function()
+        {
+            var list1 = new LinkedList();
+            
+            assert.equal(list1.head(), undefined);
+            assert.equal(list1.tail(), undefined);
+            list1.add(8);
+            assert.equal(list1.head(), 8);
+            assert.equal(list1.tail(), 8);
+            list1.add(4);
+            list1.add(5456);
+            list1.add(35345);
+            list1.add(345345342232322);
+            assert.equal(list1.tail(), 345345342232322);
+        });
+   
+        it('remove, size, head, tail', function()
+        {
+            var list2 = new LinkedList();
+            
+            list2.remove();
+            assert.equal(list2.head(), undefined);
+            list2.add(12);
+            list2.add(77);
+            list2.add(533);
+            assert.equal(list2.size(), 3);
+            list2.remove();
+            assert.equal(list2.head(), 12);
+            assert.equal(list2.tail(), 77);
+            list2.remove();
+            assert.equal(list2.tail(), 12);
         });
     });
 });
