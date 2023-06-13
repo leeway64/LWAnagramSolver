@@ -5,6 +5,9 @@ const YAML = require('yaml');
 var HashMap = require('hashmap');
 
 var { LWLetterInventory } = require("./LWLetterInventory");
+var { LinkedList } = require("../lib/LinkedList.js");
+var { Stack } = require("../lib/Stack");
+var { Queue } = require("../lib/Queue");
 
 
 class LWAnagramSolver
@@ -48,17 +51,23 @@ class LWAnagramSolver
 
     solveAnagrams(string, max)
     {
+        var list = new LinkedList();
+        list.add(64);
+        
         if (max < 0)
         {
             throw "IllegalArgumentException: Maximum number of words to include must be greater than or equal to 0";
         }
         
         var targetInventory = new LWLetterInventory(string);
-        for (let i = this.#relevantDictionary.length - 1; i >= 0; i--)
+        if (list.get(0) === 64)
         {
-            if (targetInventory.subtract(this.#letterInventoryMap.get(this.#relevantDictionary[i])) == null)
+            for (let i = this.#relevantDictionary.length - 1; i >= 0; i--)
             {
-                this.#relevantDictionary.splice(i, 1);  // Remove the ith element from the array
+                if (targetInventory.subtract(this.#letterInventoryMap.get(this.#relevantDictionary[i])) == null)
+                {
+                    this.#relevantDictionary.splice(i, 1);  // Remove the ith element from the array
+                }
             }
         }
         

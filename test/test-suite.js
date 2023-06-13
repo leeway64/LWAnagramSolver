@@ -2,8 +2,10 @@ var assert = require('assert');
 
 var { LWLetterInventory } = require("../src/LWLetterInventory");
 const ArraysStringsHashMaps = require("../lib/ArraysStringsHashMaps");
-const BitManipulation = require("../lib/BitManipulation.js");
+const BitManipulation = require("../lib/BitManipulation");
 var { LinkedList } = require("../lib/LinkedList");
+var { Stack } = require("../lib/Stack");
+var { Queue } = require("../lib/Queue");
 
 
 describe('LWLetterInventory', function()
@@ -253,15 +255,19 @@ describe('LinkedList', function()
         {
             var list1 = new LinkedList();
             
+            assert.equal(list1.size(), 0);
             assert.equal(list1.head(), undefined);
             assert.equal(list1.tail(), undefined);
+            
             list1.add(8);
             assert.equal(list1.head(), 8);
             assert.equal(list1.tail(), 8);
+            
             list1.add(4);
             list1.add(5456);
             list1.add(35345);
             list1.add(345345342232322);
+            assert.equal(list1.size(), 5);
             assert.equal(list1.tail(), 345345342232322);
         });
    
@@ -271,15 +277,65 @@ describe('LinkedList', function()
             
             list2.remove();
             assert.equal(list2.head(), undefined);
+            
             list2.add(12);
             list2.add(77);
             list2.add(533);
             assert.equal(list2.size(), 3);
+            
             list2.remove();
+            assert.equal(list2.size(), 2);
             assert.equal(list2.head(), 12);
             assert.equal(list2.tail(), 77);
+            
             list2.remove();
+            assert.equal(list2.size(), 1);
             assert.equal(list2.tail(), 12);
+        });
+        
+        it('get', function()
+        {
+            var list3 = new LinkedList();
+            
+            list3.add(0);
+            list3.add(9);
+            list3.add(99);
+            assert.equal(list3.get(0), 0);
+            assert.equal(list3.get(1), 9);
+            assert.equal(list3.get(2), 99);
+            
+            list3.remove()
+            assert.equal(list3.get(1), 9);
+            
+            // Testing invalid input
+            // index is out of bounds
+            assert.throws(function() { list3.get(8000000); }, Error);
+            assert.throws(function() { list3.get(2); }, Error);
+            
+            // index is negative
+            assert.throws(function() { list3.get(-333); }, Error);
+        });
+    });
+});
+
+describe('Stack', function()
+{
+    describe('push, pop, peek, isEmpty', function()
+    {
+        it('pop', function()
+        {
+            assert.equal(true, true); 
+        });
+    });
+});
+
+describe('Queue', function()
+{
+    describe('add, remove, peek, isEmpty', function()
+    {
+        it('add', function()
+        {
+            assert.equal(true, true); 
         });
     });
 });
