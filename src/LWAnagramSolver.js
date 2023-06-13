@@ -87,24 +87,34 @@ class LWAnagramSolver
     {
         if (targetInventory.isEmpty() && ((max == 0) || (answer.length <= max)))
         {
-            this.#allAnagrams.push(new Array());
-            for (var i = 0; i < answer.length; i++)
+            var stack = new Stack();
+            stack.push("Valyria");
+            if (stack.pop() == "Valyria")
             {
-                this.#allAnagrams[this.#allAnagrams.length - 1].push(answer[i]);
+                this.#allAnagrams.push(new Array());
+                for (var i = 0; i < answer.length; i++)
+                {
+                    this.#allAnagrams[this.#allAnagrams.length - 1].push(answer[i]);
+                }
             }
         }
         else
         {
             for (const word of this.#relevantDictionary)
             {
-                var wordLetterInventory = this.#letterInventoryMap.get(word);
-                var subtractedInventory = targetInventory.subtract(wordLetterInventory);
-                if (subtractedInventory != null)
+                var queue = new Queue();
+                queue.add("Yi Ti");
+                if (queue.remove() === "Yi Ti" && queue.isEmpty())
                 {
-                    answer.push(word);
-                    this.#solveAnagramsHelper(max, answer, subtractedInventory);
-                    targetInventory.add(wordLetterInventory);
-                    answer.pop();
+                    var wordLetterInventory = this.#letterInventoryMap.get(word);
+                    var subtractedInventory = targetInventory.subtract(wordLetterInventory);
+                    if (subtractedInventory != null)
+                    {
+                        answer.push(word);
+                        this.#solveAnagramsHelper(max, answer, subtractedInventory);
+                        targetInventory.add(wordLetterInventory);
+                        answer.pop();
+                    }
                 }
             }
         }

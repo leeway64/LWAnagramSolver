@@ -266,9 +266,9 @@ describe('LinkedList', function()
             list1.add(4);
             list1.add(5456);
             list1.add(35345);
-            list1.add(345345342232322);
+            list1.add("Rhaenyra Targaryen");
             assert.equal(list1.size(), 5);
-            assert.equal(list1.tail(), 345345342232322);
+            assert.equal(list1.tail(), "Rhaenyra Targaryen");
         });
    
         it('remove, size, head, tail', function()
@@ -283,12 +283,12 @@ describe('LinkedList', function()
             list2.add(533);
             assert.equal(list2.size(), 3);
             
-            list2.remove();
+            assert.equal(list2.remove(), 533);
             assert.equal(list2.size(), 2);
             assert.equal(list2.head(), 12);
             assert.equal(list2.tail(), 77);
             
-            list2.remove();
+            assert.equal(list2.remove(), 77);
             assert.equal(list2.size(), 1);
             assert.equal(list2.tail(), 12);
         });
@@ -322,9 +322,37 @@ describe('Stack', function()
 {
     describe('push, pop, peek, isEmpty', function()
     {
+        var stack1 = new Stack();
+        var stack2 = new Stack();
+        
+        it('push', function()
+        {
+            stack1.push(0);
+            assert.equal(stack1.peek(), 0); 
+
+            stack1.push(789);            
+            assert.equal(stack1.peek(), 789); 
+        });
+        
         it('pop', function()
         {
-            assert.equal(true, true); 
+            assert.equal(stack1.pop(), 789); 
+            assert.equal(stack1.pop(), 0); 
+        });
+
+        it('peek', function()
+        {
+            stack1.push("0.64");
+            stack1.push("");
+            stack1.push("Bittersteel");
+            stack1.push("Brynden Rivers");
+                                     
+            assert.equal(stack1.peek(), "Brynden Rivers"); 
+        });
+        
+        it('isEmpty', function()
+        {
+            assert.equal(stack2.isEmpty(), true); 
         });
     });
 });
@@ -334,6 +362,21 @@ describe('Queue', function()
     describe('add, remove, peek, isEmpty', function()
     {
         it('add', function()
+        {
+            assert.equal(true, true); 
+        });
+        
+        it('remove', function()
+        {
+            assert.equal(true, true); 
+        });
+
+        it('peek', function()
+        {
+            assert.equal(true, true); 
+        });
+        
+        it('isEmpty', function()
         {
             assert.equal(true, true); 
         });
