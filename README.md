@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/leeway64/LWAnagramSolver)
 
-LWAnagramSolver solves angrams in the English language.
+LWAnagramSolver finds all anagrams for a certain word or phrase.
 
 
 ## Installation
@@ -17,6 +17,12 @@ git clone https://github.com/leeway64/LWAnagramSolver.git
 cd LWAnagramSolver
 npm install
 ```
+Note that LWAnagramSolver uses Node.js and npm. To learn more about how to use Node.js and npm, run
+the following commands:
+```bash
+
+```
+This will generate a PDF explaining how to use Node.js and npm.
 
 
 ## Usage
@@ -28,7 +34,8 @@ In this case, let's use [dict3.txt](https://courses.cs.washington.edu/courses/cs
 bash include/get-dictionary.sh dict3.txt
 ```
 
-This will download dict3.txt into the [include](include) directory.
+This will download dict3.txt into the [include](include) directory. To learn more about different
+Bash commands and Linux in general, refer to [this page](doc/README.md).
 
 Next, run LWAnagramSolver, which will generate a YAML file containing the anagrams:
 ```bash

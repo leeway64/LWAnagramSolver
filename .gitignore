@@ -4,6 +4,9 @@
 # Downloaded dictionary files
 dict*
 
+# PDF files generated from LaTeX
+*.pdf
+
 # Dependency directories
 node_modules/
 
