@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+
 if [ "$#" -ne 1 ]; then
     echo "Error: Provide the name of the text file as an argument."
     exit

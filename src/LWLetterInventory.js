@@ -11,6 +11,7 @@ class LWLetterInventory
         var lowercase = data.toLowerCase();
         for (let i = 0; i < lowercase.length; i++)
         {
+            // Ignore any character that is not a letter of the English alphabet
             if (lowercase[i].match(/[a-z]/gi))
             {
                 this.#size++;
@@ -23,6 +24,7 @@ class LWLetterInventory
         }
     }
     
+    // Get the frequency of a certain letter (how many times it appears)
     get(letter)
     {
         var lowercaseLetter = letter.toLowerCase();
@@ -34,6 +36,7 @@ class LWLetterInventory
         return this.#letterCounts.get(lowercaseLetter) == null ? 0 : this.#letterCounts.get(lowercaseLetter);
     }
     
+    // Set the frequency of a certain letter
     set(letter, value)
     {
         var lowercaseLetter = letter.toLowerCase();
@@ -58,6 +61,7 @@ class LWLetterInventory
         this.#letterCounts.set(lowercaseLetter, value);
     }
     
+    // Returns the number of letters in the inventory
     size()
     {
         return this.#size;
@@ -73,6 +77,7 @@ class LWLetterInventory
         return this.#letterCounts.entries();
     }
     
+    // Returns a new LWLetterInventory with the sum of the counts of this inventory and otherInventory
     add(otherInventory)
     {
         var newLetterInventory = new LWLetterInventory("");
@@ -93,6 +98,7 @@ class LWLetterInventory
         return newLetterInventory;
     }
     
+    // Returns a new LWLetterInventory with the counts of otherInventory subtracted from the counts of this inventory
     subtract(otherInventory)
     {
         var newLetterInventory = new LWLetterInventory("");

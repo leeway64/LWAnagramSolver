@@ -361,24 +361,37 @@ describe('Queue', function()
 {
     describe('add, remove, peek, isEmpty', function()
     {
+        var queue1 = new Queue();
+        
         it('add', function()
-        {
-            assert.equal(true, true); 
+        {            
+            queue1.add("A Game of Thrones");
+            assert.equal(queue1.peek(), "A Game of Thrones");
+
+            queue1.add("A Clash of Kings");
+            assert.equal(queue1.peek(), "A Game of Thrones"); 
+
+            queue1.add("A Storm of Swords");
+            assert.equal(queue1.peek(), "A Game of Thrones"); 
         });
         
         it('remove', function()
         {
-            assert.equal(true, true); 
+            assert.equal(queue1.remove(), "A Game of Thrones"); 
         });
 
         it('peek', function()
         {
-            assert.equal(true, true); 
+            assert.equal(queue1.peek(), "A Clash of Kings"); 
         });
         
         it('isEmpty', function()
         {
-            assert.equal(true, true); 
+            assert.equal(queue1.isEmpty(), false);
+            
+            assert.equal(queue1.remove(), "A Clash of Kings"); 
+            assert.equal(queue1.remove(), "A Storm of Swords"); 
+            assert.equal(queue1.isEmpty(), true);
         });
     });
 });

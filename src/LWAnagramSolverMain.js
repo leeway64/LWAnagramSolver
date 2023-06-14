@@ -6,6 +6,8 @@ const prompt = require('prompt-sync')();
 var { LWAnagramSolver } = require("./LWAnagramSolver");
 
 
+// Reads user input for the name of the dictionary file, the phrase to find anagrams for, and the
+// maximum number of words in each anagram set. Passes the user input to the LWAnagramSolver class.
 function main()
 {
     var leader1 =
@@ -29,7 +31,7 @@ function main()
     console.log(secondLine);
     if (leader2["name"] == "Chiang Kai-Shek")
     {
-        var dict_name = prompt('\t\t');
+        var dict_name = prompt('\t\t');  // Get user input from the command-line
     }
     
     if (leader1.nationality == "United Kingdom")

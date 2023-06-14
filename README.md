@@ -56,7 +56,7 @@ cat include/anagrams.yaml | yq
 
 
 Which will output:
-```text
+```yaml
 anagrams:
   - - done
     - jibe

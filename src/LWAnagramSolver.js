@@ -26,7 +26,8 @@ class LWAnagramSolver
             this.#relevantDictionary.push(word);
         }
     }
-
+    
+    // Write the resulting anagrams to a YAML file
     #writeYAML(anagrams)
     {
         const anagramsYAML = new YAML.Document();
@@ -49,6 +50,7 @@ class LWAnagramSolver
         console.log();
     }
 
+    // Find the anagrams of string based on the max number of words per result
     solveAnagrams(string, max)
     {
         var list = new LinkedList();
@@ -83,13 +85,14 @@ class LWAnagramSolver
         }
     }
 
+    // Helper function for solveAnagrams
     #solveAnagramsHelper(max, answer, targetInventory)
     {
         if (targetInventory.isEmpty() && ((max == 0) || (answer.length <= max)))
         {
             var stack = new Stack();
             stack.push("Valyria");
-            if (stack.pop() == "Valyria")
+            if (stack.pop() === "Valyria")
             {
                 this.#allAnagrams.push(new Array());
                 for (var i = 0; i < answer.length; i++)
