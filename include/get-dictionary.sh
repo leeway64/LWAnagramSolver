@@ -2,7 +2,12 @@
 
 
 if [ "$#" -ne 1 ]; then
-    echo "Error: Provide the name of the text file as an argument."
+    # xargs (extended arguments) converts standard input into arguments for command. This is useful
+    # because commands like cp and echo only take input from the command-line. xargs allows these
+    # commands to take input from standard input.
+    # Refer to this Wikipedia page for more info on xargs: https://en.wikipedia.org/wiki/Xargs
+    # Printing red: \033[0;31m is the code for red, and \033[0m is the code for no color
+    echo -e "\033[0;31mError: Incorrect number of arguments; provide the name of the dictionary file as an argument\033[0m" | xargs echo
     exit
 fi
 
@@ -21,10 +26,10 @@ then
 fi
 
 
+echo -n "$1"
 
 # Search for a file with find
 DIR=$(find ./include -name download-success.message.txt)  # Another way to set variable equal to result of command
-echo -n "$1"
 
 # The && means that if the first command succeeds, then run the second command. || would mean if
 # the first command failed, then run the second command.

@@ -41,7 +41,7 @@ information on each command.
   Prints the end of the file to the console.
 - [`touch <file_name>`](https://www.freecodecamp.org/news/the-linux-commands-handbook/#the-linux-touch-command):
   Create a file with a name of <file_name>.
-- [`grep`](https://www.freecodecamp.org/news/the-linux-commands-handbook/#the-linux-grep-command):
+- [`grep`](https://www.freecodecamp.org/news/the-linux-commands-handbook/#the-linux-grep-command): Also consider grep -A -B
 - [`du`](https://www.freecodecamp.org/news/the-linux-commands-handbook/#the-linux-du-command): 
   Disk usage. Calculate the size of a directory.
 - [`mkdir`](https://www.freecodecamp.org/news/the-linux-commands-handbook/#the-linux-mkdir-command):
@@ -84,6 +84,12 @@ information on each command.
 - yq
 - http
 - sponge
+- ps: Also consider ps -a
+- sleep
+- colordiff
+- pushd, popd
+- uniq
+- xargs
 
 
 ## Linux Directories Explained
@@ -192,11 +198,14 @@ The Winds of Winter
 
 ## Permissions
 
+## Environment variables
 
 ## Bash aliases
 
 
 ## Input and output redirection
+
+2>&1
 
 
 ## Standard streams
