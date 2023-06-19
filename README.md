@@ -11,16 +11,19 @@ LWAnagramSolver finds all anagrams for a certain word or phrase.
 **Prerequisites**
 - Node.js
 - Bun (drop-in replacement for Node)
+- texlive, texinfo, texlive-fonts-recommended, texlive-fonts-extra: For Ubuntu-based systems, refer
+to this [page](https://linuxhint.com/convert-tex-latex-file-to-pdf/) for how to install these packages.
 
 ```bash
 git clone https://github.com/leeway64/LWAnagramSolver.git
 cd LWAnagramSolver
 npm install
 ```
+
 Note that LWAnagramSolver uses Node.js and npm. To learn more about how to use Node.js and npm, run
 the following commands:
 ```bash
-
+pdflatex --output-directory=doc doc/how-to-use-node.js.tex
 ```
 This will generate a PDF explaining how to use Node.js and npm.
 
@@ -109,3 +112,11 @@ in the [lib](lib) directory.
 - [Mocha](https://www.npmjs.com/package/mocha) (MIT License): JavaScript test framework.
 - [hashmap](https://www.npmjs.com/package/hashmap) (MIT License): JavaScript HashMap class.
 - [prompt-sync](https://www.npmjs.com/package/prompt-sync) (MIT License): User input prompter.
+
+In addition to the previous sofware, this project also uses texlive, texinfo,
+texlive-fonts-recommended, and texlive-fonts-extra. For Ubuntu-based systems, refer to this
+[page](https://linuxhint.com/convert-tex-latex-file-to-pdf/) for how to install these packages,
+along with how to convert a LaTeX document to a PDF.
+
+To learn more about how to use LaTeX in general, [this page](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+provides many useful examples.
