@@ -90,6 +90,7 @@ information on each command.
 - pushd, popd
 - uniq
 - xargs
+- xrandr --output DP-1 --scale 2x2
 
 
 ## Linux Directories Explained
@@ -108,6 +109,9 @@ Check out the [Fireship channel](https://www.youtube.com/c/Fireship) for similar
 - `home`: Contains a directory for every on for the system.
 - `boot`: Contains files necessary to boot (starting) the machine, such as the Linux kernel.
 - `dev`: Device files. Can interact with hardware drivers as if they were files.
+    - /dev/null
+    - /dev/random
+    - /dev/zero
 - `opt`: Optional software.
 - `var`: Variable files. Contains files that will change as the OS is run.
 - `tmp`: Temporary files. Will be deleted between reboots.
